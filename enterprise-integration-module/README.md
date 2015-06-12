@@ -24,7 +24,7 @@ This would be done in four steps steps
              <packaging>pom</packaging>
          
              <modules>
-                 <module>YOUR COOL CAMEL MODULES HERE</module>
+                 <module>YOUR ENTERPRISE INTEGRATION CAMEL MODULES WILL BE ADDED HERE</module>
              </modules>
          
          </project>
@@ -32,7 +32,7 @@ This would be done in four steps steps
 
   - Copy the folder enterprise-integration-module inside the recently created services fodler.
 
-    Remember to rename the file backbase-mashup-service.xml to backbase-integration-service.xml and the internal        routecontext id's to the proper integration package (com.backbase.portal.integration.service).
+   
   - Make sure to change camel version in the pom.xml file under the enterprise-integration-module:
          ```xml
          <camel.version>2.12.4</camel.version>
