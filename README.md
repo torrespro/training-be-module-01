@@ -1,3 +1,17 @@
+# Backbase Training Exercises
+
+## Portal Backend - Module 1: Enterprise Integration
+
+In this module, we see how backbase leverages the power of Apache CAMEL to perform various enterprise integrations. 
+You would run an actual backend server, and then connect your widgets to the backend using enterprise integration patterns implemented in this excercise
+
+### Contents
+
+
+
+### Installation & Configuration
+
+
 1. Copy the enterprise-integration-widgets module inside:
     exercises-environment/statics/bundles/
 
