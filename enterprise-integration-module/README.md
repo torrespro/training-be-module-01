@@ -3,7 +3,7 @@
 ### Installation & Configuration
 
 You are now going to integrate the camel module for this excercise with your portal.
-This would be done in four steps steps 
+This would be done in four steps 
 
 - **Build and configure enterprise-integraion-module with services  module of your CXP project**
  -  Add a services folder at the root of exercises-environment with following pom.xml file
