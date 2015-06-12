@@ -1,0 +1,12 @@
+.players li {
+}
+
+.players .player-name {
+    text-align: left;
+    display: inline-block;
+    width: 150px;
+}
+
+.players .player-score {
+    text-align: right;
+}

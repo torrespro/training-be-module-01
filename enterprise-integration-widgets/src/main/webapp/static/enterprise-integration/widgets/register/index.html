@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <title>Register</title>
+    <script type="text/javascript" src="js/register.js"></script>
+    <link href="style/register.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body g:onload="training.register.init(__WIDGET__);" class="register-widget">
+    <form method="post" class="training">
+        <!-- fake fields are a workaround for chrome autofill getting the wrong fields -->
+        <input style="display:none" type="text" name="fakeusernameremembered"/>
+        <input style="display:none" type="password" name="fakepasswordremembered"/>
+        <h1>Player Registration</h1>
+
+        <div class="inset">
+            <p>
+                <label for="reg_username">Username</label>
+                <input type="text" name="username" id="reg_username"/>
+            </p>
+            <p>
+                <label for="reg_fullname">Full Name</label>
+                <input type="text" name="fullName" id="reg_fullname"/>
+            </p>
+            <p>
+                <label for="reg_password">Password</label>
+                <input type="password" name="password" id="reg_password"/>
+            </p>
+            <p>
+                <label for="reg_conf_password">Confirm Password</label>
+                <input type="password" name="confirm_password" id="reg_conf_password"/>
+            </p>
+            <p>
+                <label for="reg_email">E-mail Address</label>
+                <input type="text" name="emailAddress" id="reg_email"/>
+            </p>
+            <p>
+                <label for="reg_gender">Gender</label>
+                <input id="reg_gender" type="radio" name="gender" value="M"/>Male
+                <input type="radio" name="gender" value="F"/>Female
+            </p>
+        </div>
+        <p class="p-container">
+            <input type="submit" name="register" id="register" value="Register"/>
+        </p>
+
+
+    </form>
+</body>
+</html>

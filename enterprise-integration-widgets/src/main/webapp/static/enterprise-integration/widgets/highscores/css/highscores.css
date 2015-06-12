@@ -1,0 +1,12 @@
+.highscores li {
+}
+
+.highscores .player-name {
+    text-align: left;
+    display: inline-block;
+    width: 150px;
+}
+
+.highscores .player-score {
+    text-align: right;
+}

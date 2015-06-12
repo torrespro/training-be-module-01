@@ -1,0 +1,22 @@
+<catalog>
+    <widget>
+        <name>training-gmae-2048</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <extendedItemName>widget-launchpad-base</extendedItemName>
+        <properties>
+            <property name="src">
+                <value type="string">$(contextRoot)/static/enterprise-integration/widgets/game-2048/index.html</value>
+            </property>
+            <property label="Title" name="title" viewHint="user,designModeOnly">
+                <value type="string">Training Game 2048</value>
+            </property>
+            <property name="thumbnailUrl">
+                <value type="string">$(contextRoot)/static/dashboard/media/icons/icons-widgets_01-default.png</value>
+            </property>
+        </properties>
+        <tags>
+            <tag type="regular">backend</tag>
+            <tag type="section">Training</tag>
+        </tags>
+    </widget>
+</catalog>

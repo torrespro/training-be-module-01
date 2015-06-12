@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+            xsi:schemaLocation="
+        http://maven.apache.org/POM/4.0.0 
+        http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.backbase.expert.training</groupId>
+        <artifactId>services</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+         <camel.version>2.12.4</camel.version>
+    </properties>
+
+    <artifactId>enterprise-integration-module</artifactId>
+
+    <name>Services :: Player Management</name>
+
+    <dependencies>
+
+        <!-- Backbase Core Libraries -->
+        <dependency>
+            <groupId>com.backbase.portal.foundation</groupId>
+            <artifactId>presentation</artifactId>
+            <version>${portal.server.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Apache Camel -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>${camel.version}</version>
+            
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-spring</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-restlet</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jackson</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>3.2.10.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>2.2.8</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.codehaus.woodstox</groupId>
+                    <artifactId>woodstox-core-asl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jaxb</artifactId>
+            <version>${camel.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-xmljson</artifactId>
+            <version>${camel.version}</version>
+            <!-- Use the same version as camel-core, but remember that this component is only available from 2.10 onwards -->
+        </dependency>
+
+        <!-- And also XOM must be included. XOM cannot be included by default due to an incompatible
+        license with ASF; so add this manually -->
+        <dependency>
+            <groupId>xom</groupId>
+            <artifactId>xom</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-pool</artifactId>
+            <version>5.6.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.hadoop</groupId>
+                    <artifactId>hadoop-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-camel</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.backbase.launchpad.services.foundation</groupId>
+            <artifactId>demo-services-integration</artifactId>
+            <version>0.11.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-codegen-plugin</artifactId>
+                <version>2.7.8</version>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot>
+                            <wsdlOptions>
+                                <wsdlOption>
+                                    <wsdl>http://localhost:9999/training-server/PlayerManager?wsdl</wsdl>
+                                    <bindingFiles>
+                                        <bindingFile>${basedir}/src/main/resources/binding.xml</bindingFile>
+                                    </bindingFiles>
+                                </wsdlOption>
+
+                            </wsdlOptions>
+                        </configuration>
+                        <goals>
+                            <goal>wsdl2java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
