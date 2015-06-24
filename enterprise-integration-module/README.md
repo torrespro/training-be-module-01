@@ -23,6 +23,16 @@ This would be done in four steps
   ```
   
   Re-compile services by executing `mvn clean install` in the **services** folder.
+  
+- Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in **portal/pom.xml** in order to include your routes when the portal is fired.
+
+  ```xml
+      <dependency>
+          <groupId>com.backbase.expert.training</groupId>
+          <artifactId>enterprise-integration-module</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+  ```
 
 - Set up portal properties to point to the training server. You can find **backbase.properties** in the following path **configuration/src/main/resources**. Open this file and add the following lines:
 
@@ -43,16 +53,6 @@ This would be done in four steps
   ```
 
   Re-compile configuration by executing `mvn clean package` in the **configuration** folder.
-
-- Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in **portal/pom.xml** in order to include your routes when the portal is fired.
-
-  ```xml
-      <dependency>
-          <groupId>com.backbase.expert.training</groupId>
-          <artifactId>enterprise-integration-module</artifactId>
-          <version>1.0-SNAPSHOT</version>
-      </dependency>
-  ```
 
 - Configure the **enterprise-integration-module** login provider with the portal security setup.
 
