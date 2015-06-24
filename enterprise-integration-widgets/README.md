@@ -1,6 +1,6 @@
 # Backbase Training Exercises
 
-## Portal Backend - Module 1: Enterprise Integration Module
+## Portal Backend - Module 1: Enterprise Integration Widgets
 
 This exercise is part of [Module 1: Enterprise Integration](https://github.com/Backbase/training-be-module-01/tree/code-migration)
 
