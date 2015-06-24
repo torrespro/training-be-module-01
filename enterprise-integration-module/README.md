@@ -48,20 +48,20 @@ This would be done in four steps
   - You can find backbase.properties on following path exercises-environment/configuration/src/main/resources  
     Open this file and at the end of it add lines:
 
-         ```    
+    ```    
              #Training Server Host
              training.server.host=${training.server.host}
              training.server.http.port=${training.server.http.port}
              training.server.mq.port=${training.server.mq.port}
-         ```
+    ```
 
     Open src/main/filters/local.properties and add
              
-         ```
+    ```
              training.server.host=localhost
              training.server.http.port=9999
              training.server.mq.port=61616
-         ```
+    ```
 
     Re-Compile exercises-environment/configuration  (mvn clean install)
 
@@ -82,13 +82,13 @@ This would be done in four steps
 
  - Finally add the dependency in the pom.xml file of the portal module in order to include your routes when the portal is fired.
 
-         ```
+   ```
              <dependency>
                  <groupId>com.backbase.expert.training</groupId>
                  <artifactId>enterprise-integration-module</artifactId>
                  <version>1.0-SNAPSHOT</version>
              </dependency>
-         ```
+   ```
 
 
 - **Build and Run** 
