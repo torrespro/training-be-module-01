@@ -21,6 +21,8 @@ This would be done in four steps
   ```xml
   <module>enterprise-integration-module</module>
   ```
+  
+  Re-compile services by executing `mvn clean install`` in the **services** folder.
 
 - Set up portal properties to point to the training server. You can find **backbase.properties** in the following path **configuration/src/main/resources**. Open this file and add the following lines:
 
@@ -40,11 +42,7 @@ This would be done in four steps
   training.server.mq.port=61616
   ```
 
-  Re-compile configuration by executing the following command in the **configuration** folder:
-
-  ```
-  mvn clean package
-  ```
+  Re-compile configuration by executing `mvn clean package` in the **configuration** folder.
 
 - Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in **portal/pom.xml** in order to include your routes when the portal is fired.
 
@@ -73,17 +71,14 @@ This would be done in four steps
 
   within the `<authentication-manager>` block.
 
-- Build and Run
+### Build and Run
 
-  Let's compile everything and fire up the portal to test our new routes:
+Let's compile everything and fire up the portal to test our new routes. In the **portal** folder, execute:
 
-       inside services -> mvn clean install
-       inside portal -> mvn clean jetty:run
+     mvn clean jetty:run
 
-  Test with:
+Test with:
 
-       http://localhost:7777/portalserver/services/rest/player/list
+     http://localhost:7777/portalserver/services/rest/player/list
 
-  This should return an empty array `{ players: [] }` in json format.
-
-Congrats!
+This should return an empty array `{ players: [] }` in json format.
