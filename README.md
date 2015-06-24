@@ -5,6 +5,10 @@
 In this module, we see how backbase leverages the power of Apache CAMEL to perform various enterprise integrations. 
 You would run an actual backend server, and then connect your widgets to the backend using enterprise integration patterns implemented in this excercise
 
+### Prerequisites
+
+All exercises use the [standard portal set-up for backbase trainings](https://my.backbase.com/resources/how-to-guides/getting-your-first-launchpad-based-portal-set-up/).
+
 ### Contents
 
 This module contains two components 
