@@ -7,7 +7,7 @@ This would be done in four steps
 
 - Copy the **enterprise-integration-module** folder into the **services** folder of your portal project.
 
-- Make sure you included the module in **services/pom.xml**. Add the following in the `<modiles>` section:
+- Make sure you included the module in **services/pom.xml**. Add the following in the `<modules>` section:
 
   ```xml
   <module>enterprise-integration-module</module>
