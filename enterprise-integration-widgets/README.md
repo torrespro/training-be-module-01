@@ -10,10 +10,10 @@ Please note that you would also need to configure [enterprise-integration-module
 - Add the submodule reference in maven. Edit the file `statics/bundles/pom.xml` and add:
 
 ```
-    <modules>
-        <module>enterprise-integration-widgets</module>
-    </modules>  
+    <module>enterprise-integration-widgets</module>
 ```
+
+  inside the `<modules>` section.
 
 - Add the webapp folder of enterprise-integration-widgets to the jetty config of portal submodule pom.xml
 
