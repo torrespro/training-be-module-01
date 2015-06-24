@@ -2,11 +2,11 @@
 
 ## Portal Backend - Module 1: Enterprise Integration Widgets
 
-This exercise is part of [Module 1: Enterprise Integration](https://github.com/Backbase/training-be-module-01/tree/code-migration)
+This exercise is part of [Module 1: Enterprise Integration](../../..)
 
 ### Prerequisites
 
-You need to configure [enterprise-integration-module](https://github.com/Backbase/training-be-module-01/tree/code-migration/enterprise-integration-module) in order to see these widgets in action.
+You need to configure [enterprise-integration-module](../../../enterprise-integration-module) in order to see these widgets in action.
 
 ### Installation & Configuration
 
