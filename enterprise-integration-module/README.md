@@ -5,15 +5,15 @@
 You are now going to integrate the camel module for this excercise with your portal.
 This would be done in four steps 
 
-- Copy the folder **enterprise-integration-module** inside the **services** folder of your portal project.
+- Copy the **enterprise-integration-module** folder into the **services** folder of your portal project.
 
-- Make sure you included the module in the **pom.xml** file of the **services** folder:
+- Make sure you included the module in **services/pom.xml**. Add the following in the `<modiles>` section:
 
   ```xml
   <module>enterprise-integration-module</module>
   ```
 
-- Set up portal properties to point to the training server. You can find **backbase.properties** on the following path **exercises-environment/configuration/src/main/resources**. Open this file and add the following lines:
+- Set up portal properties to point to the training server. You can find **backbase.properties** in the following path **configuration/src/main/resources**. Open this file and add the following lines:
 
   ```    
   #Training Server Host
@@ -22,7 +22,7 @@ This would be done in four steps
   training.server.mq.port=${training.server.mq.port}
   ```
 
-  Open src/main/filters/local.properties and add
+  Open **configuration/src/main/filters/local.properties** and add
 
   ```
   #Training Server Host
@@ -37,7 +37,7 @@ This would be done in four steps
   mvn clean package
   ```
 
-- Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in the **pom.xml** file of the **portal** module in order to include your routes when the portal is fired.
+- Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in **portal/pom.xml** in order to include your routes when the portal is fired.
 
   ```xml
       <dependency>
