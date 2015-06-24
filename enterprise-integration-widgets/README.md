@@ -25,7 +25,7 @@ Please note that you would also need to configure [enterprise-integration-module
 
   Once done, use YAPI to import the new widgets.
 
-  Widget xml defintions can be found here :-
+  Widget xml defintions can be found here:
 
 	- Game : training-be-module-01/enterprise-integration-widgets/src/main/webapp/static/enterprise-integration/widgets/game-2048/import/catalog-game-2048.xml
 	- Highscores : training-be-module-01/enterprise-integration-widgets/src/main/webapp/static/enterprise-integration/widgets/highscores/import/catalog-highscores.xml
