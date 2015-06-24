@@ -22,7 +22,7 @@ This would be done in four steps
   <module>enterprise-integration-module</module>
   ```
   
-  Re-compile services by executing `mvn clean install`` in the **services** folder.
+  Re-compile services by executing `mvn clean install` in the **services** folder.
 
 - Set up portal properties to point to the training server. You can find **backbase.properties** in the following path **configuration/src/main/resources**. Open this file and add the following lines:
 
