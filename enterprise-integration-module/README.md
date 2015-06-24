@@ -7,7 +7,7 @@ This exercise is part of [Module 1: Enterprise Integration](https://github.com/B
 ### Prerequisites
 
 You need to get a training server up and running before performing this excerise.
-Follow the instructions that can be found here [training-server](https://github.com/Backbase/training-server/tree/code-migration)
+Follow the instructions from [Training Server](https://github.com/Backbase/training-server/tree/code-migration)
 
 ### Installation & Configuration
 
