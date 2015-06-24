@@ -76,7 +76,7 @@ This would be done in four steps
 
  - Finally add the dependency in the pom.xml file of the portal module in order to include your routes when the portal is fired.
 
-   ```
+   ```xml
    <dependency>
        <groupId>com.backbase.expert.training</groupId>
        <artifactId>enterprise-integration-module</artifactId>
