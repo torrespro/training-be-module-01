@@ -17,7 +17,8 @@ training.register = (function ($) {
                 var data = {
                     "username": $("#reg_username").val(),
                     "fullname": $("#reg_fullname").val(),
-                    "password": $("#reg_password").val()
+                    "password": $("#reg_password").val(),
+                    "birthDay": $("#reg_birthDay").val()
                 };
 
                 var xhr = $.ajax({
