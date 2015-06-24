@@ -2,7 +2,7 @@
 
 ## Portal Backend - Module 1: Enterprise Integration Module
 
-This exercise is part of [Module 1: Enterprise Integration](..)
+This exercise is part of [Module 1: Enterprise Integration](../../..)
 
 ### Prerequisites
 
