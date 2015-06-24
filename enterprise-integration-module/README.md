@@ -5,96 +5,76 @@
 You are now going to integrate the camel module for this excercise with your portal.
 This would be done in four steps 
 
-- **Build and configure enterprise-integraion-module with services  module of your CXP project**
- -  Add a services folder at the root of exercises-environment with following pom.xml file
+- Copy the folder **enterprise-integration-module** inside the **services** folder of your portal project.
 
-    ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <project xmlns="http://maven.apache.org/POM/4.0.0"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-        <parent>
-            <artifactId>exercises-environment</artifactId>
-            <groupId>com.backbase.training</groupId>
-            <version>1.0-SNAPSHOT</version>
-        </parent>
-        <modelVersion>4.0.0</modelVersion>
-         
-        <artifactId>services</artifactId>
-        <packaging>pom</packaging>
-         
-        <modules>
-            <module>YOUR ENTERPRISE INTEGRATION CAMEL MODULES WILL BE ADDED HERE</module>
-        </modules>
-         
-    </project>
-    ```
+- Make sure you included the module in the **pom.xml** file of the **services** folder:
 
-  - Copy the folder enterprise-integration-module inside the recently created services fodler.
+  ```xml
+  <module>enterprise-integration-module</module>
+  ```
 
-  - Also make sure you add the module in the main pom.xml under services:
+- Set up portal properties to point to the training server. You can find **backbase.properties** on the following path **exercises-environment/configuration/src/main/resources**. Open this file and add the following lines:
 
-         ```xml
-         <module>enterprise-integration-module</module>
-         ```
+  ```    
+  #Training Server Host
+  training.server.host=${training.server.host}
+  training.server.http.port=${training.server.http.port}
+  training.server.mq.port=${training.server.mq.port}
+  ```
 
-- **Set up portal properties to point to the training server**
+  Open src/main/filters/local.properties and add
 
-  - You can find backbase.properties on following path exercises-environment/configuration/src/main/resources  
-    Open this file and at the end of it add lines:
+  ```
+  #Training Server Host
+  training.server.host=localhost
+  training.server.http.port=9999
+  training.server.mq.port=61616
+  ```
 
-    ```    
-    #Training Server Host
-    training.server.host=${training.server.host}
-    training.server.http.port=${training.server.http.port}
-    training.server.mq.port=${training.server.mq.port}
-    ```
+  Re-compile configuration by executing the following command in the **configuration** folder:
 
-    Open src/main/filters/local.properties and add
-             
-    ```
-    #Training Server Host
-    training.server.host=localhost
-    training.server.http.port=9999
-    training.server.mq.port=61616
-    ```
+  ```
+  mvn clean package
+  ```
 
-    Re-Compile exercises-environment/configuration (mvn clean package)
+- Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in the **pom.xml** file of the **portal** module in order to include your routes when the portal is fired.
 
-- **Configure the enterprise-integration-module login provider with the portal security setup**
+  ```xml
+      <dependency>
+          <groupId>com.backbase.expert.training</groupId>
+          <artifactId>enterprise-integration-module</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+  ```
 
- - Add the login provider for the player management module to work to
+- Configure the **enterprise-integration-module** login provider with the portal security setup.
 
-    [Your CXP Root]/portal/src/main/resources/META-INF/spring/backbase-portal-business-security.xml
+  Open **portal/src/main/resources/META-INF/spring/backbase-portal-business-security.xml** and add the login provider for the player management module:
 
-    ```xml
-    <beans:bean id="playerAuthenticationProvider"
-                class="com.backbase.expert.training.security.PlayerAuthenticationProvider"/> 
-    ```
+  ```xml
+  <beans:bean id="playerAuthenticationProvider"
+              class="com.backbase.expert.training.security.PlayerAuthenticationProvider"/> 
+  ```
 
-- **Configure portal project to include the enterprise-integration-module as a dependency**
+  Finally, include
 
- - Finally add the dependency in the pom.xml file of the portal module in order to include your routes when the portal is fired.
+  ```xml
+  <authentication-provider ref="playerAuthenticationProvider" />
+  ```
 
-   ```xml
-       <dependency>
-           <groupId>com.backbase.expert.training</groupId>
-           <artifactId>enterprise-integration-module</artifactId>
-           <version>1.0-SNAPSHOT</version>
-       </dependency>
-   ```
+  within the `<authentication-manager>` block.
 
-- **Build and Run** 
+- Build and Run
 
-   Let's compile everything and fire up the portal to test our new routes:
+  Let's compile everything and fire up the portal to test our new routes:
 
-         inside services -> mvn clean install
-         inside portal -> mvn clean jetty:run
+       inside services -> mvn clean install
+       inside portal -> mvn clean jetty:run
 
-   Test with:
+  Test with:
 
-         http://localhost:7777/portalserver/services/rest/player/list
+       http://localhost:7777/portalserver/services/rest/player/list
 
-   This should return an empty array `{ players: [] }` in json format.
+  This should return an empty array `{ players: [] }` in json format.
 
-   Congrats!
+  Congrats!
