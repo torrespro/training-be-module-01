@@ -15,7 +15,7 @@ This module contains two components
 
 1. enterprise-integration-module : The backend camel module which contains routes to connect to the training server.
 For details look at 
-[enterprise-integration-module](https://github.com/Backbase/training-be-module-01/tree/code-migration/enterprise-integration-module)
+[enterprise-integration-module](enterprise-integration-module)
 
 2. enterprise-integration-widgets : The frontend part of this excercise. For details look at 
-[enterprise-integration-widgets](https://github.com/Backbase/training-be-module-01/blob/code-migration/enterprise-integration-widgets)
+[enterprise-integration-widgets](enterprise-integration-widgets)
