@@ -1,9 +1,16 @@
 # Backbase Training Exercises
 
+## Portal Backend - Module 1: Enterprise Integration
+
+This exercise is part of [Module 1: Enterprise Integration](https://github.com/Backbase/training-be-module-01/tree/code-migration)
+
+### Prerequisites
+
+You need to configure [enterprise-integration-module](https://github.com/Backbase/training-be-module-01/tree/code-migration/enterprise-integration-module) in order to see these widgets in action.
+
 ### Installation & Configuration
 
 The following steps are needed to add the enterprise integration widgets to your training environments.
-Please note that you would also need to configure [enterprise-integration-module](https://github.com/Backbase/training-be-module-01/tree/code-migration/enterprise-integration-module) in order to see these widgets in action.
 
 - Copy the enterprise-integration-widgets module inside the `statics/bundles` folder of your portal project.
 
