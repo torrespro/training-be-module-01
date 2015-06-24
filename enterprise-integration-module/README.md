@@ -68,7 +68,8 @@ This would be done in four steps
     [Your CXP Root]/portal/src/main/resources/META-INF/spring/backbase-portal-business-security.xml
 
     ```xml
-    <beans:bean id="playerAuthenticationProvider" class="com.backbase.expert.training.security.PlayerAuthenticationProvider"/> 
+    <beans:bean id="playerAuthenticationProvider"
+                class="com.backbase.expert.training.security.PlayerAuthenticationProvider"/> 
     ```
 
 - **Configure portal project to include the enterprise-integration-module as a dependency**
