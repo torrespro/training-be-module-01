@@ -45,8 +45,9 @@ This would be done in four steps
 
 - **Set up portal properties to point to the training server**
 
-  - You can find backbase.properties on following path exercises-environment/configuration/src/main/resources
-             Open this file and at the end of it add lines:
+  - You can find backbase.properties on following path exercises-environment/configuration/src/main/resources  
+    Open this file and at the end of it add lines:
+
          ```    
              #Training Server Host
              training.server.host=${training.server.host}
@@ -54,14 +55,15 @@ This would be done in four steps
              training.server.mq.port=${training.server.mq.port}
          ```
 
-             Open src/main/filters/local.properties and add
+    Open src/main/filters/local.properties and add
+             
          ```
              training.server.host=localhost
              training.server.http.port=9999
              training.server.mq.port=61616
          ```
 
-             Re-Compile exercises-environment/configuration  (mvn clean install)
+    Re-Compile exercises-environment/configuration  (mvn clean install)
 
 
 - **Configure the enterprise-integration-module login provider with the portal security setup**
