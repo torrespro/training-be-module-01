@@ -95,6 +95,6 @@ This would be done in four steps
 
          http://localhost:7777/portalserver/services/rest/player/list
 
-   This should return an empty array { players: [] } in json format.
+   This should return an empty array `{ players: [] }` in json format.
 
    Congrats!
