@@ -9,17 +9,17 @@ Please note that you would also need to configure [enterprise-integration-module
 
 - Add the submodule reference in maven. Edit the file `statics/bundles/pom.xml` and add:
 
-```
+  ```
     <module>enterprise-integration-widgets</module>
-```
+  ```
 
   inside the `<modules>` section.
 
 - Add the webapp folder of enterprise-integration-widgets to the jetty config of portal submodule pom.xml
 
-```
+  ```
 	<resourceBase>${statics.dir}/bundles/enterprise-integration-widgets/src/main/webapp</resourceBase>
-```
+  ```
 
 - In order to install YAPI, follow the following link: https://my.backbase.com/resources/how-to-guides/how-to-use-yet-another-portal-importer-yapi
 
