@@ -2,12 +2,12 @@
 
 ## Portal Backend - Module 1: Enterprise Integration Module
 
-This exercise is part of [Module 1: Enterprise Integration](https://github.com/Backbase/training-be-module-01/tree/code-migration)
+This exercise is part of [Module 1: Enterprise Integration](..)
 
 ### Prerequisites
 
 You need to get a training server up and running before performing this excerise.
-Follow the instructions from [Training Server](https://github.com/Backbase/training-server/tree/code-migration).
+Follow the instructions from [Training Server](https://github.com/Backbase/training-server).
 
 ### Installation & Configuration
 
