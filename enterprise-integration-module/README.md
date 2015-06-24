@@ -77,4 +77,4 @@ This would be done in four steps
 
   This should return an empty array `{ players: [] }` in json format.
 
-  Congrats!
+Congrats!
