@@ -15,6 +15,3 @@ For details look at
 
 2. enterprise-integration-widgets : The frontend part of this excercise. For details look at 
 [enterprise-integration-widgets](https://github.com/Backbase/training-be-module-01/blob/code-migration/enterprise-integration-widgets)
-
-Additionally you need to get a training server up and running before performing this excerise.
-Follow the instructions mentioned here [training-server](https://github.com/Backbase/training-server/tree/code-migration)
