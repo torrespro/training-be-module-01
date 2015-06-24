@@ -16,12 +16,15 @@ This would be done in four steps
 
 - Copy the **enterprise-integration-module** folder into the **services** folder of your Launchpad 0.12.x project.
 
-- Make sure you included the module in **services/pom.xml**. Add the following in the `<modules>` section:
+- Make sure you included the module to the build. Open `services/pom.xml` and add **enterprise-integration-module** in the `<modules>` section:
+	```xml
+	    <modules>
+	        ...	    
+	        <module>enterprise-integration-module</module>
+	        ...
+	    </modules>
+	```
 
-  ```xml
-  <module>enterprise-integration-module</module>
-  ```
-  
   Re-compile services by executing `mvn clean install` in the **services** folder.
   
 - Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in **portal/pom.xml** in order to include your routes when the portal is fired.
@@ -63,13 +66,15 @@ This would be done in four steps
               class="com.backbase.expert.training.security.PlayerAuthenticationProvider"/> 
   ```
 
-  Finally, include
+  Finally, make sure you included `playerAuthenticationProvider` within the `<authentication-manager>` block:
 
   ```xml
-  <authentication-provider ref="playerAuthenticationProvider" />
+  <authentication-manager>
+      ...
+      <authentication-provider ref="playerAuthenticationProvider" />
+      ...
+  </authentication-manager>
   ```
-
-  within the `<authentication-manager>` block.
 
 ### Build and Run
 
