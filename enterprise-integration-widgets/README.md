@@ -12,7 +12,7 @@ You need to configure [enterprise-integration-module](https://github.com/Backbas
 
 The following steps are needed to add the enterprise integration widgets to your training environments.
 
-- Copy the enterprise-integration-widgets module inside the `statics/bundles` folder of your portal project.
+- Copy the enterprise-integration-widgets module inside the `statics/bundles` folder of your Launchpad 0.12.x project.
 
 - Add the submodule reference in maven. Edit the file `statics/bundles/pom.xml` and add:
 
