@@ -1,5 +1,10 @@
 # Backbase Training Exercises
 
+### Prerequisites
+
+You need to get a training server up and running before performing this excerise.
+Follow the instructions that can be found here [training-server](https://github.com/Backbase/training-server/tree/code-migration)
+
 ### Installation & Configuration
 
 You are now going to integrate the camel module for this excercise with your portal.
