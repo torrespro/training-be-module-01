@@ -58,6 +58,7 @@ This would be done in four steps
     Open src/main/filters/local.properties and add
              
     ```
+             #Training Server Host
              training.server.host=localhost
              training.server.http.port=9999
              training.server.mq.port=61616
