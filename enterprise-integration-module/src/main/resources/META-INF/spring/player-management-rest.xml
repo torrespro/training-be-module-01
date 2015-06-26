@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <bean id="changeOrderProcessor" class="com.backbase.expert.training.processor.PlayerSortProcessor"/>
+
+    <!-- Set the name of the context starting with com.backbase.mashup.service
+        so it gets automatically picked up by mashup services -->
+    <camel:routeContext id="com.backbase.portal.integration.service.player.rest" xmlns="http://camel.apache.org/schema/spring">
+
+        <!-- Defining an id in the route is important for loggging messages. -->
+        <route id="training.player.register">
+            <!-- Define the url that is going to be used by the widgets. In this case
+                /<context-root>/services/sample/rest-service -->
+            <from uri="restlet:/player/register?restletMethods=POST&amp;restletBinding=#queryStringToHeadersRestletBinding"/>
+
+            <!-- Convert Body to String because input streams can only be read once -->
+            <convertBodyTo type="String"/>
+            <!-- Logging a message -->
+            <log message="Request: ${body} and ${headers}." loggingLevel="DEBUG"/>
+
+            <!-- Removed redundant headers -->
+            <removeHeaders pattern="CamelHttp*" excludePattern="CamelHttpMethod"/>
+
+            <!-- Forward request to training-server -->
+            <to uri="http://{{training.server.host}}:{{training.server.http.port}}/training-server/rest/player"/>
+            <!-- Convert Body to String because input streams can only be read once -->
+            <convertBodyTo type="String"/>
+            <log message="Response: ${body}." loggingLevel="DEBUG"/>
+        </route>
+
+
+        <!-- Defining an id in the route is important for loggging messages. -->
+        <route id="training.player.list">
+            <!-- Define the url that is going to be used by the widgets. In this case
+                /<context-root>/services/sample/rest-service -->
+            <from uri="restlet:/player/list?restletMethods=GET&amp;restletBinding=#queryStringToHeadersRestletBinding"/>
+            <!-- Removed redundant headers -->
+            <removeHeaders pattern="CamelHttp*" excludePattern="CamelHttpMethod"/>
+            <!-- Forward request to trainig-server -->
+            <to uri="http://{{training.server.host}}:{{training.server.http.port}}/training-server/rest/player/players"/>
+            <unmarshal>
+                <json library="Jackson"/>
+            </unmarshal>
+            <process ref="changeOrderProcessor"/>
+            <marshal>
+                <json library="Jackson"/>
+            </marshal>
+            <log message="Response: ${body}." loggingLevel="DEBUG"/>
+        </route>
+
+      <route id="training.player.highscores">
+        <!-- Define the url that is going to be used by the widgets. In this case
+            /<context-root>/services/sample/rest-service -->
+        <from uri="restlet:/player/players/highscore?restletMethods=GET&amp;restletBinding=#queryStringToHeadersRestletBinding"/>
+        <!-- Removed redundant headers -->
+        <removeHeaders pattern="CamelHttp*" excludePattern="CamelHttpMethod"/>
+        <!-- Forward request to trainig-server -->
+        <to uri="http://{{training.server.host}}:{{training.server.http.port}}/training-server/rest/player/players/highscore"/>
+        <unmarshal>
+          <json library="Jackson"/>
+        </unmarshal>
+        <process ref="changeOrderProcessor"/>
+        <marshal>
+          <json library="Jackson"/>
+        </marshal>
+        <log message="Response: ${body}." loggingLevel="DEBUG"/>
+      </route>
+
+        <route id="training.game.session.create">
+            <from uri="restlet:/game/session?restletMethod=post&amp;restletBinding=#queryStringToHeadersRestletBinding"/>
+            <!-- Removed redundant headers -->
+            <removeHeaders pattern="CamelHttp*" excludePattern="CamelHttpMethod"/>
+            <!-- Convert Body to String because input streams can only be read once -->
+            <convertBodyTo type="String"/>
+            <log message="Request: ${body}." loggingLevel="DEBUG"/>
+            <to uri="http://{{training.server.host}}:{{training.server.http.port}}/training-server/rest/game/session?bridgeEndpoint=true&amp;throwExceptionOnFailure=false"/>
+            <!-- Convert Body to String because input streams can only be read once -->
+            <convertBodyTo type="String"/>
+            <log message="Response: ${body}." loggingLevel="DEBUG"/>
+        </route>
+
+    </camel:routeContext>
+
+</beans>

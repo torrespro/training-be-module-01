@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:g="http://www.backbase.com/2008/gadget" xml:lang="en">
+<head>
+    <title>Login</title>
+    <script type="text/javascript" src="js/login.js"></script>
+</head>
+<body g:onload="training.login.init(__WIDGET__);" class="login">
+
+        <form class="training">
+            <!-- fake fields are a workaround for chrome autofill getting the wrong fields -->
+            <input style="display:none" type="text" name="fakeusernameremembered"/>
+            <input style="display:none" type="password" name="fakepasswordremembered"/>
+            <h1>Player Log in</h1>
+            <div class="inset">
+                <p>
+                    <label for="username">USERNAME</label>
+                    <input type="text" name="j_username" id="username" autocomplete="off"/>
+                </p>
+                <p>
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="j_password" id="password" autocomplete="off"/>
+                </p>
+                <p>
+                    <input type="checkbox" name="j_spring_security_remember_me" id="remember"/>
+                    <label for="remember">Remember me for 14 days</label>
+                </p>
+            </div>
+            <p class="p-container">
+                <span>Forgot password ?</span>
+                <input type="submit" name="go" id="go" value="Log in"/>
+            </p>
+        </form>
+</body>
+</html>
