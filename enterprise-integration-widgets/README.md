@@ -32,10 +32,10 @@ The following steps are needed to add the enterprise integration widgets to your
 
   Once done, use YAPI to import the new widgets.
 
-  Widget xml defintions are located inside the **import** subfolder of a widget:
+  An xml defintion of a widget is always located inside the **import** subfolder of a widget folder. The following widgets are available in this bundle:
 
-	- [Game 2048](src/main/webapp/static/enterprise-integration/widgets/game-2048) : [`src/main/webapp/static/enterprise-integration/widgets/game-2048/import/catalog-game-2048.xml`](src/main/webapp/static/enterprise-integration/widgets/game-2048/import/catalog-game-2048.xml)
-	- [Highscores](src/main/webapp/static/enterprise-integration/widgets/highscores) : [`src/main/webapp/static/enterprise-integration/widgets/highscores/import/catalog-highscores.xml`](src/main/webapp/static/enterprise-integration/widgets/highscores/import/catalog-highscores.xml)
-	- [Login](src/main/webapp/static/enterprise-integration/widgets/login) : [`src/main/webapp/static/enterprise-integration/widgets/login/import/catalog-login.xml`](src/main/webapp/static/enterprise-integration/widgets/login/import/catalog-login.xml)
-	- [Players](src/main/webapp/static/enterprise-integration/widgets/players) : [`src/main/webapp/static/enterprise-integration/widgets/players/import/catalog-players.xml`](src/main/webapp/static/enterprise-integration/widgets/players/import/catalog-players.xml)
-	- [Register](src/main/webapp/static/enterprise-integration/widgets/register) : [`src/main/webapp/static/enterprise-integration/widgets/register/import/catalog-register.xml`](src/main/webapp/static/enterprise-integration/widgets/register/import/catalog-register.xml)
+	- [Game 2048](src/main/webapp/static/enterprise-integration/widgets/game-2048)
+	- [Highscores](src/main/webapp/static/enterprise-integration/widgets/highscores)
+	- [Login](src/main/webapp/static/enterprise-integration/widgets/login)
+	- [Players](src/main/webapp/static/enterprise-integration/widgets/players)
+	- [Register](src/main/webapp/static/enterprise-integration/widgets/register)
