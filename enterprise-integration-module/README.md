@@ -78,7 +78,7 @@ This would be done in four steps
 
 ### Build and Run
 
-Let's compile everything and fire up the portal to test our new routes. In the **portal** folder, execute:
+Let's compile everything and fire up the portal to test our new routes. If the portal is already running, stop it by pressing Ctrl+C. In the **portal** folder, execute:
 
      mvn clean jetty:run
 
