@@ -12,6 +12,7 @@ import com.backbase.portal.foundation.domain.model.User;
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationServiceException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.security.core.AuthenticationException;
@@ -58,15 +59,16 @@ public class PlayerAuthenticationProvider extends AbstractUserDetailsAuthenticat
             throws AuthenticationException {
 
 
-        Player player = playerManagementService.getPlayer(username);
-        if(player == null) {
-            return null;
+        Player player = null;
+        try {
+            player = playerManagementService.getPlayer(username);
+        } catch (Throwable t) {
+            throw new BadCredentialsException("Username/password do not match");
         }
 
-        if(!player.getPassword().equals(authentication.getCredentials().toString())) {
-            return null;
+        if(player.getPassword() != null && !player.getPassword().equals(authentication.getCredentials().toString())) {
+            throw new BadCredentialsException("Username/password do not match");
         }
-
 
         try {
             return userBusinessService.getUser(username);
