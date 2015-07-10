@@ -31,7 +31,7 @@ This would be done in four steps
 
   ```xml
       <dependency>
-          <groupId>com.backbase.expert.training</groupId>
+          <groupId>com.backbase.training</groupId>
           <artifactId>enterprise-integration-module</artifactId>
           <version>1.0-SNAPSHOT</version>
       </dependency>
