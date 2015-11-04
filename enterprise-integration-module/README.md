@@ -14,7 +14,7 @@ Follow the instructions from [Training Server](https://github.com/Backbase/train
 You are now going to integrate the camel module for this excercise with your portal.
 This would be done in four steps 
 
-- Copy the **enterprise-integration-module** folder into the **services** folder of your Launchpad 0.12.x project.
+- Copy the **enterprise-integration-module** folder into the **services** folder of your Launchpad 0.13.x project.
 
 - Make sure you included the module to the build. Open `services/pom.xml` and add **enterprise-integration-module** in the `<modules>` section:
 	```xml
