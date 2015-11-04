@@ -14,7 +14,7 @@ The following steps are needed to add the enterprise integration widgets to your
 
 - Copy training-collection inside the `statics/collection` folder of your Launchpad 0.13.x project.
 
-- Open `statics/collection/bower.json` and add the following within `dependencies`:
+- Open `statics/collection/bower.json` and add the following lines within `dependencies`:
 
   ```
   "2048-widget-register": "./training-collection/2048-widget-register",
