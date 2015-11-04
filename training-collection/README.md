@@ -28,18 +28,16 @@ The following steps are needed to add the enterprise integration widgets to your
 
   ```
   bower.cmd install
-
   ```
+
   Alternatively, on Mac or Linux, run:
 
   ```
   ./bower install
-
   ```
 
 - If you already have [bb-cli](https://my.backbase.com/resources/how-to-guides/bb-cli-the-one-cli-to-rule-them-all/) installed, just run :
 
   ```
   bb import-collection -a
-
   ```
