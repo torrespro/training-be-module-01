@@ -27,7 +27,7 @@ This would be done in four steps
 
   Re-compile services by executing `mvn clean install` in the **services** folder.
   
-- Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in **portal/pom.xml** in order to include your routes when the portal is fired.
+- Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in **webapp/portalserver/pom.xml** in order to include your routes when the portal is fired.
 
   ```xml
       <dependency>
@@ -59,7 +59,7 @@ This would be done in four steps
 
 - Configure the **enterprise-integration-module** login provider with the portal security setup.
 
-  Open **portal/src/main/resources/META-INF/spring/backbase-portal-business-security.xml** and add the login provider for the player management module:
+  Open **webapp/portalserver/src/main/resources/META-INF/spring/backbase-portal-business-security.xml** and add the login provider for the player management module:
 
   ```xml
   <beans:bean id="playerAuthenticationProvider"
@@ -78,7 +78,7 @@ This would be done in four steps
 
 ### Build and Run
 
-Let's compile everything and fire up the portal to test our new routes. If the portal is already running, stop it by pressing *Ctrl+C*. In the **portal** folder, execute:
+Let's compile everything and fire up the portal to test our new routes. If the portal is already running, stop it by pressing *Ctrl+C*. In the **webapp/portalserver** folder, execute:
 
      mvn clean jetty:run
 
