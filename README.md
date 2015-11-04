@@ -17,5 +17,5 @@ This module contains two components
 For details look at 
 [enterprise-integration-module](enterprise-integration-module)
 
-2. enterprise-integration-widgets : The frontend part of this excercise. For details look at 
-[enterprise-integration-widgets](enterprise-integration-widgets)
+2. training-collection : The frontend part of this excercise. For details look at 
+[training-collection](training-collection)

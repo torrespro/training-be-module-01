@@ -1,0 +1,10 @@
+{
+  "name": "2048-widget-login",
+  "version": "0.0.0",
+  "authors": [
+    "Bart V <bartv@backbase.com>"
+
+  ],
+  "main": "js/login.js",
+  "private": true
+}

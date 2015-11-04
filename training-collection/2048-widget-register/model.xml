@@ -1,0 +1,33 @@
+<catalog>
+    <widget>
+        <name>2048-widget-register</name>
+        <contextItemName>[BBHOST]</contextItemName>
+        <properties>
+            <property label="Title" name="title" viewHint="user,designModeOnly">
+                <value type="string">2048 Register Widget</value>
+            </property>
+            <property name="src">
+                <value type="string">$(itemRoot)/index.html</value>
+            </property>
+            <property name="thumbnailUrl">
+                <value type="string">$(itemRoot)/icon.png</value>
+            </property>
+            <property name="TemplateName">
+                <value type="string">Standard_Widget</value>
+            </property>
+            <property label="Widget Chrome" name="widgetChrome" viewHint="select-one,admin,designModeOnly">
+                <value type="string">$(contextRoot)/static/features/[BBHOST]/chromes/blank/chrome-blank.html</value>
+            </property>
+            <property name="area">
+                <value type="string"/>
+            </property>
+            <property name="order">
+                <value type="double">0</value>
+            </property>
+        </properties>
+        <tags>
+            <tag type="regular">2048</tag>
+            <tag type="section">training</tag>
+        </tags>
+    </widget>
+</catalog>
