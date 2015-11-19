@@ -59,7 +59,11 @@ This would be done in four steps
 
 - Configure the **enterprise-integration-module** login provider with the portal security setup.
 
-  Open **webapp/portalserver/src/main/resources/META-INF/spring/backbase-portal-business-security.xml** (If the file can not be found, copy it from **webapps/portalserver/target/portalserver/WEB-INF/lib/security-portalserver-5.x.x.x.jar!/META-INF/spring/backbase-portal-business-security.xml**. If the **lib** folder does not exist, run the portal webapp using **mvn jetty:run-exploded**.) and add the login provider for the player management module:
+  Open **webapp/portalserver/src/main/resources/META-INF/spring/backbase-portal-business-security.xml**.
+  
+  > If the file can not be found, copy it from **webapps/portalserver/target/portalserver/WEB-INF/lib/security-portalserver-5.x.x.x.jar!/META-INF/spring/backbase-portal-business-security.xml**. If the **lib** folder does not exist, run the portal webapp using **mvn jetty:run-exploded**.
+  
+  Add the login provider for the player management module:
 
   ```xml
   <beans:bean id="playerAuthenticationProvider"
