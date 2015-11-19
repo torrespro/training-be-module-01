@@ -11,7 +11,7 @@ Follow the instructions from [Training Server](https://github.com/Backbase/train
 
 ### Installation & Configuration
 
-You are now going to integrate the camel module for this excercise with your portal.
+You are now going to integrate the camel module for this excercise with your portalserver.
 This would be done in four steps 
 
 - Copy the **enterprise-integration-module** folder into the **services** folder of your Launchpad 0.13.x project.
@@ -27,7 +27,7 @@ This would be done in four steps
 
   Re-compile services by executing `mvn clean install` in the **services** folder.
   
-- Configure portal project to include the enterprise-integration-module as a dependency. Add the dependency in **webapp/portalserver/pom.xml** in order to include your routes when the portal is fired.
+- Configure portalserver project to include the enterprise-integration-module as a dependency. Add the dependency in **webapp/portalserver/pom.xml** in order to include your routes when the portalserver is fired.
 
   ```xml
       <dependency>
@@ -37,7 +37,7 @@ This would be done in four steps
       </dependency>
   ```
 
-- Set up portal properties to point to the training server. You can find **backbase.properties** in the following path **configuration/src/main/resources**. Open this file and add the following lines:
+- Set up portalserver properties to point to the training server. You can find **backbase.properties** in the following path **configuration/src/main/resources**. Open this file and add the following lines:
 
   ```    
   #Training Server Host
@@ -82,7 +82,7 @@ This would be done in four steps
 
 ### Build and Run
 
-Let's compile everything and fire up the portal to test our new routes. If the portal is already running, stop it by pressing *Ctrl+C*. In the **webapp/portalserver** folder, execute:
+Let's compile everything and fire up the portalserver to test our new routes. If the portalserver is already running, stop it by pressing *Ctrl+C*. In the **webapp/portalserver** folder, execute:
 
      mvn clean jetty:run
 
