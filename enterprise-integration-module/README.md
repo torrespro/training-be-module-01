@@ -6,7 +6,7 @@ This exercise is part of [Module 1: Enterprise Integration](../../..)
 
 ### Prerequisites
 
-You need to get a training server up and running before performing this excerise.
+You need to get a training server up and running before performing this exercise.
 Follow the instructions from [Training Server](https://github.com/Backbase/training-server).
 
 ### Installation & Configuration
