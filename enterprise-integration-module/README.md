@@ -59,7 +59,7 @@ This would be done in four steps
 
 - Configure the **enterprise-integration-module** login provider with the portal security setup.
 
-  Open **webapp/portalserver/src/main/resources/META-INF/spring/backbase-portal-business-security.xml**.
+  Open **webapp/portalserver/src/demo/resources/META-INF/spring/backbase-portal-business-security.xml**.
   
   > If the file can not be found, copy it from **webapps/portalserver/target/portalserver/WEB-INF/lib/security-portalserver-5.x.x.x.jar!/META-INF/spring/backbase-portal-business-security.xml**. If the **lib** folder does not exist, run the portalserver webapp using **mvn jetty:run-exploded**.
   
