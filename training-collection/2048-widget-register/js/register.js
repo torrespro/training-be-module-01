@@ -21,10 +21,14 @@ training.register = (function ($) {
                     "birthDay": $("#reg_birthDay").val()
                 };
 
+                var headers = {};
+                headers[b$.utils.xsrf.getXSRFRequestHeaderName()] = b$.utils.xsrf.getXSRFCookie();
+
                 var xhr = $.ajax({
                     type: $form.attr("method"),
                     url: $form.attr("action"),
                     data: JSON.stringify(data),
+                    headers: headers,
                     contentType:"application/json; charset=utf-8",
                     dataType: "json"
                 });
