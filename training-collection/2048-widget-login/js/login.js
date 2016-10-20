@@ -16,16 +16,18 @@ training.login = (function ($) {
 
             $form.submit(function (event) {
                 event.preventDefault();
-console.log('hello');
+
+                var headers = {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded;'
+                };
+                headers[b$.utils.xsrf.getXSRFRequestHeaderName()] = b$.utils.xsrf.getXSRFCookie();
 
                 var xhr = $.ajax({
                     type: "POST",
                     url: "/portalserver/j_spring_security_check",
                     data: $form.serialize(),
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/x-www-form-urlencoded;'
-                    }
+                    headers: headers
                 });
 
                 xhr.success(function (response) {
