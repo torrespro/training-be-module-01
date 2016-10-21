@@ -6,38 +6,28 @@ This exercise is part of [Module 1: Enterprise Integration](../../..)
 
 ### Prerequisites
 
-You need to configure [enterprise-integration-module](../../../enterprise-integration-module) in order to see these widgets in action.
+* You need to configure [enterprise-integration-module](../../../enterprise-integration-module) in order to see these widgets in action.
+* Make sure that your *Portal Server* is running (e.g. checking the page http://localhost:7777/portalserver/cxp-manager)
+* Make sure that you have *bb-cli* installed (e.g. typing the *bb* command inside your terminal). If *bb-cli* is not installed, please follow the installation instructions in https://github.com/Backbase/bb-cli
 
 ### Installation & Configuration
 
-The following steps are needed to add the enterprise integration widgets to your training environments.
+You will find this set of widgets inside the *training-collection* folder:
 
-- Copy training-collection inside the `statics/collection` folder of your Launchpad 0.13.x project.
+* *2048-widget-register*: Creates a new player
+* *2048-widget-players*: Lists players
+* *2048-widget-login*: Authenticates players
+* *2048-widget-highscores*: Lists highscores
+* *2048-widget-game*: Plays the 2048 game
 
-- Open `statics/collection/bower.json` and add the following lines within `dependencies`:
+The following steps are needed to add them into your training environment.
 
-  ```
-  "2048-widget-register": "./training-collection/2048-widget-register",
-  "2048-widget-players": "./training-collection/2048-widget-players",
-  "2048-widget-login": "./training-collection/2048-widget-login",
-  "2048-widget-highscores": "./training-collection/2048-widget-highscores",
-  "2048-widget-game": "./training-collection/2048-widget-game"
-  ```
-
-- On Windows, run:
+* Copy the *training-collection* folder into your CXP project folder (e.g. *statics/collection*)
+* Run the following command inside the *training-collection* folder:
 
   ```
-  bower.cmd install
+  bb import-item -l
   ```
-
-  Alternatively, on Mac or Linux, run:
-
-  ```
-  ./bower install
-  ```
-
-- If you already have [bb-cli](https://my.backbase.com/resources/how-to-guides/bb-cli-the-one-cli-to-rule-them-all/) installed, just run :
-
-  ```
-  bb import-collection -a
-  ```
+  The *-l* option tells *bb-cli* to interate over all subfolders and import each item into the *Enterprise Catalog*.
+  
+* Open *CXP Manager* and check if the widgets are available in the *Enterprise Catalog*
