@@ -35,8 +35,8 @@
 
 
 
-    <!-- Set the name of the context starting with com.backbase.mashup.service
-        so it gets automatically picked up by mashup services -->
+    <!-- Set the name of the context starting with com.backbase.integration.service
+        so it gets automatically picked up by integration services -->
     <camel:routeContext id="com.backbase.portal.integration.service.player" xmlns="http://camel.apache.org/schema/spring">
 
 
