@@ -7,11 +7,11 @@
 
     <bean id="changeOrderProcessor" class="com.backbase.expert.training.processor.PlayerSortProcessor"/>
 
-    <!-- Set the name of the context starting with com.backbase.mashup.service
-        so it gets automatically picked up by mashup services -->
+    <!-- Set the name of the context starting with com.backbase.integration.service
+        so it gets automatically picked up by integration services -->
     <camel:routeContext id="com.backbase.portal.integration.service.player.rest" xmlns="http://camel.apache.org/schema/spring">
 
-        <!-- Defining an id in the route is important for loggging messages. -->
+        <!-- Defining an id in the route is important for logging messages. -->
         <route id="training.player.register">
             <!-- Define the url that is going to be used by the widgets. In this case
                 /<context-root>/services/sample/rest-service -->
@@ -33,7 +33,7 @@
         </route>
 
 
-        <!-- Defining an id in the route is important for loggging messages. -->
+        <!-- Defining an id in the route is important for logging messages. -->
         <route id="training.player.list">
             <!-- Define the url that is going to be used by the widgets. In this case
                 /<context-root>/services/sample/rest-service -->
