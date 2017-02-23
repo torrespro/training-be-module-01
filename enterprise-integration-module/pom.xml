@@ -33,7 +33,7 @@
         <dependency>
             <groupId>com.backbase.portal.integration</groupId>
             <artifactId>integration-shared</artifactId>
-            <version>${portal.integration.version}</version>
+            <version>${portal.server.version}</version>
             <scope>provided</scope>
         </dependency>
 
